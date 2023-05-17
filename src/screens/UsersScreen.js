@@ -80,8 +80,8 @@ const UsersScreen = () => {
     <div>
       <h3 className="text-center text-lg font-bold">Users List</h3>
       {usersList?.length && (
-        <table>
-          <thead>
+        <table className="min-w-full text-left text-sm font-light">
+          <thead className="border-b font-medium dark:border-neutral-500">
             <tr>
               {tableHeaders?.map((item) => (
                 <th rowSpan={2} className="p-2 m-2">
@@ -99,9 +99,9 @@ const UsersScreen = () => {
           </thead>
           <tbody>
             {usersList?.map((user) => (
-              <tr>
+              <tr className="border-b dark:border-neutral-500">
                 {tableDataKeys?.map((row) => (
-                  <td className="p-2 m-2">
+                  <td className="p-2 m-2 whitespace-nowrap px-6 py-4">
                     {JSON.stringify(
                       row === "address" ? user[row]?.city : user[row]
                     )}
